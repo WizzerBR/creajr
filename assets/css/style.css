@@ -105,10 +105,12 @@ header ul li a {
 #presentation,
 #target,
 #schedule,
-#follow-us {
+#follow-us,
+#sponsor {
   display: flex;
   flex-direction: column;
   margin: 36px 24px;
+  align-items: center;
 }
 
 .presentation-wrap {
@@ -170,22 +172,26 @@ header ul li a {
 
 /* OBJETIVOS */
 
-#goals {
+#goals,
+#supporters {
   display: flex;
   flex-direction: column;
   background-color: #06729d;
   padding: 64px 24px;
 }
 
-#goals h1 {
+#goals h1,
+#supporters h1 {
   color: #fff;
 }
 
-#goals h1::after {
+#goals h1::after,
+#supporters h1::after {
   background-color: #fff;
 }
 
-#goals hr {
+#goals hr,
+#supporters hr {
   background-color: #fff;
   margin-bottom: 64px;
 }
@@ -252,6 +258,21 @@ header ul li a {
   font-weight: 600;
 }
 
+/* PATROCINADORES */
+
+.sponsor-img {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.sponsor-img img {
+  width: 100%;
+  max-width: 160px;
+  margin: 24px 0;
+}
+
 /* DATAS E HORARIOS */
 
 #schedule h1 {
@@ -265,7 +286,7 @@ header ul li a {
   font-weight: 300;
   letter-spacing: 0.05em;
   line-height: 140%;
-  text-align: right;
+  align-self: flex-end;
 }
 
 #schedule h3::after {
@@ -284,6 +305,7 @@ header ul li a {
   align-items: center;
   flex: 0 0 50%;
   border-bottom: 1px solid #dbdbdb;
+  width: 100%;
 }
 
 #schedule .schedule-btn button {
@@ -307,6 +329,10 @@ header ul li a {
   text-align: center;
 }
 
+#schedule table tr {
+  width: 100%;
+}
+
 #schedule table th {
   font-size: 12px;
   color: #1aace3;
@@ -322,7 +348,7 @@ header ul li a {
   letter-spacing: 0.05em;
 }
 
-#schedule table td:nth-child(1) {
+#schedule table td:nth-child(2n-1) {
   font-weight: 800;
   letter-spacing: 0.05em;
 }
@@ -330,6 +356,21 @@ header ul li a {
 #first-day,
 #second-day {
   transition: all 300ms ease;
+}
+
+/* APOIADORES */
+
+.supporters-img {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.supporters-img img {
+  width: 100%;
+  max-width: 150px;
+  margin: 32px;
 }
 
 /* FOLLOW US */
@@ -345,44 +386,8 @@ header ul li a {
   width: 100%;
   margin: 30px 0;
   align-items: center;
-  justify-content: space-between;
-}
-
-/* EMAIL */
-
-.mail-fixed {
-  padding: 24px 18px;
-  display: flex;
-  flex-direction: column;
-  position: fixed;
-  width: 100%;
-  height: 80px;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  z-index: 999999;
-  background-color: #fff;
-  box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.06);
-}
-
-.mail-fixed form {
-  display: flex;
-  margin: 12px 0;
-}
-
-.mail-fixed form input {
-  display: flex;
-  padding: 8px;
-  background: #f9f9f9;
-  border: 1px solid #c6c6c6;
-  width: 75%;
-  max-width: 150px;
-}
-
-.mail-fixed form button {
-  background-color: #06729d;
-  color: #fff;
-  padding: 8px;
+  justify-content: space-evenly;
+  max-width: 360px;
 }
 
 /* MEDIAQUERIE */
@@ -413,6 +418,10 @@ header ul li a {
     background-color: #333333;
     margin-right: 90%;
   }
+  .supporters-img {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -424,7 +433,7 @@ header ul li a {
     height: 90vh;
   }
 
-  header > button {
+  header > a {
     display: none;
   }
 
@@ -481,6 +490,12 @@ header ul li a {
     margin: 8px 0;
   }
 
+  .sponsor-img {
+    flex-direction: row;
+    justify-content: space-evenly;
+    max-width: 800px;
+  }
+
   /* OBJETIVOS */
 
   .box-wrap {
@@ -522,18 +537,13 @@ header ul li a {
   #schedule {
     max-width: 800px;
     margin: 0 auto;
+    margin-bottom: 72px;
   }
 
   /* REDES SOCIAIS */
 
   #follow-us {
-    max-width: 360px;
     margin: 72px auto;
-    margin-bottom: 120px;
-  }
-
-  .mail-fixed {
-    display: none;
   }
 }
 
